@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.recyclerView
+import android.view.Gravity
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,6 +41,14 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerView.addItemDecoration(DividerItemDecoration(this, RecyclerView.VERTICAL))
-        recyclerView.adapter = MainActivityAdapter(items)
+        recyclerView.adapter = MainActivityAdapter(items) { item ->
+            toastMake(item, 0, 0)
+        }
+    }
+
+    private fun toastMake(message: String, x: Int, y: Int) {
+        val toast = Toast.makeText(this, message, Toast.LENGTH_LONG)
+        toast.setGravity(Gravity.CENTER, x, y)
+        toast.show()
     }
 }
