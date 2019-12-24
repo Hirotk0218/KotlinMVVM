@@ -10,30 +10,32 @@ import android.view.Gravity
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
-
-    //ポケモンデータリスト
+    
+    //数字データリスト
     private val items = listOf(
-            "フシギダネ",
-            "フシギソウ",
-            "フシギバナ",
-            "ヒトカゲ",
-            "リザード",
-            "リザードン",
-            "ゼニガメ",
-            "カメール",
-            "カメックス",
-            "キャタピー",
-            "トランセル",
-            "バタフリー",
-            "ビートル",
-            "コクーン",
-            "スピアー",
-            "ポッポ",
-            "ピジョン",
-            "ピジョット",
-            "コラッタ",
-            "ラッタ"
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20"
     )
+
+    private var totalValue = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +44,8 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerView.addItemDecoration(DividerItemDecoration(this, RecyclerView.VERTICAL))
         recyclerView.adapter = MainActivityAdapter(items) { item ->
-            toastMake(item, 0, 0)
+            totalValue += item.toInt()
+            toastMake(totalValue.toString(), 0, 0)
         }
     }
 
