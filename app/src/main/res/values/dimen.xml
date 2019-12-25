@@ -1,3 +1,5 @@
 <resources>
+    <dimen name="view_size_10">10dp</dimen>
     <dimen name="view_size_20">20dp</dimen>
+    <dimen name="view_size_60">60dp</dimen>
 </resources>

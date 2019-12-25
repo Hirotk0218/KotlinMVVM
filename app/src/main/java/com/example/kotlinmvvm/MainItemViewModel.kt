@@ -13,7 +13,7 @@ class MainItemViewModel {
     private val item: MutableLiveData<MainItem> =
             MutableLiveData<MainItem>().also { mutableLiveData ->
                 mutableLiveData.observeForever { item ->
-                    _number.postValue(item.number)
+                    _number.postValue(item.name)
                 }
             }
 

@@ -33,7 +33,7 @@ class MainActivityAdapter(
         val vh = ViewHolder(binding)
         binding.root.setOnClickListener {
             val item = items[vh.adapterPosition]
-            onItemClick(item.number)
+            onItemClick(item.name)
         }
         return vh
     }
@@ -41,7 +41,7 @@ class MainActivityAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val vm = holder.binding.vm ?: throw IllegalStateException("")
         vm.set(items[position])
-        holder.binding.contentText.text = items[position].number
+        holder.binding.contentText.text = items[position].name
     }
 
     override fun getItemCount() = items.size
