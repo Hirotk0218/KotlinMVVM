@@ -1,4 +1,57 @@
 <resources>
     <string name="app_name">KotlinMVVM</string>
-    <string name="title">一覧</string>
+    <string name="title">春の花見イベントのご案内</string>
+    <string name="message">
+        花の便りが北上する季節になりましたが、皆様いかがお過ごしでしょうか。\n
+        さて、今年も恒例のお花見の会を開催することとなりました。
+        今年は暖冬により桜も早い開花が予想され、例年より一週間ほど早い日程となります。\n
+        時節柄ご多忙中とは存じますが、何卒ご出席くださいますようお願い申し上げます。\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+        TESTだよ\n
+    </string>
+    <string name="join">参加する</string>
+    <string name="in_join">参加中</string>
+    <string name="show_detail">詳細</string>
+    <string name="cancel">キャンセル</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
