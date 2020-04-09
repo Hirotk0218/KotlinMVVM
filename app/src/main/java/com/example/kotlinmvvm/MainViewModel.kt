@@ -3,27 +3,31 @@ package com.example.kotlinmvvm
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.kotlinmvvm.model.MainItem
 import com.example.kotlinmvvm.repository.NumberRepository
+import java.util.*
 
-class MainViewModel(val repository: NumberRepository) : ViewModel() {
+class MainViewModel(private val repository: NumberRepository) : ViewModel() {
 
-    private var totalNumber = 0
+    private val itemList = ArrayList<Int>()
+    private val _items: MutableLiveData<List<Int>> =
+        MutableLiveData<List<Int>>().also { live ->
+            live.value = emptyList()
+        }
 
-    private val _items: MutableLiveData<List<MainItem>> =
-            MutableLiveData<List<MainItem>>().also { live ->
-                live.value = emptyList()
-            }
-    val items: LiveData<List<MainItem>>
+    val items: LiveData<List<Int>>
         get() = _items
 
     fun load() {
         _items.value = emptyList()
-        _items.postValue(repository.items())
+        itemList.clear()
+        itemList.addAll(repository.items())
+        _items.postValue(itemList)
     }
 
-    fun addition(number : String) : String {
-        totalNumber += number.toInt()
-        return totalNumber.toString()
+    fun loadMore(page: Int = 1) {
+        if (page > 1) {
+            itemList.addAll(repository.items().map { it + 10 * (page - 1) })
+            _items.value = itemList
+        }
     }
 }

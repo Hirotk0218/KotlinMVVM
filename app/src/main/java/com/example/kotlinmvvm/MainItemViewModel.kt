@@ -2,7 +2,6 @@ package com.example.kotlinmvvm
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.kotlinmvvm.model.MainItem
 
 class MainItemViewModel {
 
@@ -10,14 +9,14 @@ class MainItemViewModel {
     val number: LiveData<String>
         get() = _number
 
-    private val item: MutableLiveData<MainItem> =
-            MutableLiveData<MainItem>().also { mutableLiveData ->
+    private val item: MutableLiveData<Int> =
+            MutableLiveData<Int>().also { mutableLiveData ->
                 mutableLiveData.observeForever { item ->
-                    _number.postValue(item.number)
+                    _number.postValue(item.toString())
                 }
             }
 
-    fun set(item: MainItem) {
+    fun set(item: Int) {
         this.item.postValue(item)
     }
 }

@@ -42,6 +42,7 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
     //Lifecycle
+    implementation "androidx.lifecycle:lifecycle-runtime:2.1.0"
     kapt "androidx.lifecycle:lifecycle-compiler:2.1.0"
     implementation "androidx.lifecycle:lifecycle-extensions:2.1.0"
 
